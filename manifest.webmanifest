@@ -1,0 +1,21 @@
+{
+  "name": "HisabCraft — Free GST Billing, Khata & Inventory",
+  "short_name": "HisabCraft",
+  "description": "Free, offline, open-source GST billing + khata + inventory for Bharat shops.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#f4f5fb",
+  "theme_color": "#4338ca",
+  "lang": "en",
+  "categories": ["business", "finance", "productivity"],
+  "icons": [
+    {
+      "src": "icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

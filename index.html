@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HisabCraft — Free GST Billing, Khata & Inventory</title>
+<meta name="description" content="Free, offline, open-source GST billing + khata + inventory for Bharat shops. Tally/Vyapar alternative. Your data stays on your device.">
+<meta name="theme-color" content="#4338ca">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="app" class="app">
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <img src="icons/icon.svg" alt="" class="brand-icon">
+      <div>
+        <div class="brand-name">HisabCraft</div>
+        <div class="brand-sub" data-i18n="tagline">Free GST billing for Bharat</div>
+      </div>
+    </div>
+    <nav id="nav">
+      <a href="#dashboard" data-view="dashboard" data-i18n="nav_dashboard">📊 Dashboard</a>
+      <a href="#sales" data-view="sales" data-i18n="nav_sales">🧾 Sales Invoices</a>
+      <a href="#purchases" data-view="purchases" data-i18n="nav_purchases">📦 Purchases</a>
+      <a href="#parties" data-view="parties" data-i18n="nav_parties">👥 Parties (Khata)</a>
+      <a href="#items" data-view="items" data-i18n="nav_items">🏷️ Items & Stock</a>
+      <a href="#payments" data-view="payments" data-i18n="nav_payments">💰 Payments</a>
+      <a href="#reports" data-view="reports" data-i18n="nav_reports">📈 Reports (GST)</a>
+      <a href="#settings" data-view="settings" data-i18n="nav_settings">⚙️ Settings</a>
+    </nav>
+    <div class="sidebar-foot">
+      <div class="offline-badge" data-i18n="offline_badge">● Works offline</div>
+      <button class="btn secondary small" id="langBtn" style="width:100%;margin:8px 0 6px;">हिन्दी</button>
+      <div class="foot-note">v1.0 · MIT · <a href="https://github.com/Sugamdeol/hisabcraft" target="_blank" rel="noopener">GitHub</a></div>
+    </div>
+  </aside>
+  <button class="menu-btn" id="menuBtn" style="margin-bottom:10px;">☰ Menu</button>
+  <main class="main" id="main"></main>
+</div>
+<div id="print-area"></div>
+<div id="toast" class="toast hidden"></div>
+<script src="js/gst.js"></script>
+<script src="js/db.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
