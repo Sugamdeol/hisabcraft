@@ -1,9 +1,22 @@
 /* HisabCraft — service worker. Cache-first, offline by default. */
-var CACHE = 'hisabcraft-v1';
+var CACHE = 'hisabcraft-v2';
 var ASSETS = [
   './',
   './index.html',
   './css/style.css',
+  './fonts/mukta.css',
+  './fonts/mukta-latin-400.woff2',
+  './fonts/mukta-latin-500.woff2',
+  './fonts/mukta-latin-700.woff2',
+  './fonts/mukta-latin-800.woff2',
+  './fonts/mukta-latin-ext-400.woff2',
+  './fonts/mukta-latin-ext-500.woff2',
+  './fonts/mukta-latin-ext-700.woff2',
+  './fonts/mukta-latin-ext-800.woff2',
+  './fonts/mukta-devanagari-400.woff2',
+  './fonts/mukta-devanagari-500.woff2',
+  './fonts/mukta-devanagari-700.woff2',
+  './fonts/mukta-devanagari-800.woff2',
   './js/gst.js',
   './js/db.js',
   './js/i18n.js',
@@ -20,7 +33,12 @@ self.addEventListener('install', function (e) {
 });
 
 self.addEventListener('activate', function (e) {
-  e.waitUntil(clients.claim());
+  e.waitUntil(
+    caches.keys().then(function (keys) {
+      return Promise.all(keys.filter(function (k) { return k !== CACHE; })
+        .map(function (k) { return caches.delete(k); }));
+    }).then(function () { return clients.claim(); })
+  );
 });
 
 self.addEventListener('fetch', function (e) {

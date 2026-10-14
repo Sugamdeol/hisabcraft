@@ -251,7 +251,7 @@
       '<div class="card"><h3>' + t('nav_sales') + ' — ' + t('recent', 'recent') + '</h3>' +
       (recent.length ?
         '<div class="table-wrap"><table><thead><tr><th>' + t('invoice_no') + '</th><th>' + t('date') + '</th><th>' + t('party') + '</th><th class="num">' + t('total') + '</th><th>' + t('actions') + '</th></tr></thead><tbody>' + rows + '</tbody></table></div>' :
-        '<div class="empty"><div class="big">🧾</div>' + t('no_data') + '</div>') +
+        '<div class="empty">' + t('no_data') + '</div>') +
       '</div>';
   }
 
@@ -276,7 +276,7 @@
       '<div class="page-head"><h1>' + t('nav_' + kind) + '</h1>' +
       '<button class="btn" onclick="openForm(\'' + kind + '\')">' + (kind === 'sales' ? t('new_invoice') : t('new_purchase')) + '</button></div>' +
       '<div class="card"><div class="table-wrap"><table><thead><tr><th>' + t('invoice_no') + '</th><th>' + t('date') + '</th><th>' + t('party') + '</th><th>GSTIN</th><th class="num">' + t('total') + '</th><th>' + t('actions') + '</th></tr></thead><tbody>' +
-      (rows || '<tr><td colspan="6" class="empty"><div class="big">🧾</div>' + t('no_data') + '</td></tr>') +
+      (rows || '<tr><td colspan="6" class="empty">' + t('no_data') + '</td></tr>') +
       '</tbody></table></div></div>';
   }
 
@@ -479,7 +479,7 @@
     root.innerHTML =
       '<div class="page-head"><h1>' + t('parties') + '</h1><button class="btn" onclick="openPartyForm()">' + t('new_party') + '</button></div>' +
       '<div class="card"><div class="table-wrap"><table><thead><tr><th>' + t('name') + '</th><th>' + t('phone') + '</th><th>' + t('gstin') + '</th><th>' + t('state') + '</th><th>' + t('type') + '</th><th>' + t('balance') + '</th><th>' + t('actions') + '</th></tr></thead><tbody>' +
-      (rows || '<tr><td colspan="7" class="empty"><div class="big">👥</div>' + t('no_data') + '</td></tr>') +
+      (rows || '<tr><td colspan="7" class="empty">' + t('no_data') + '</td></tr>') +
       '</tbody></table></div></div>';
   }
 
@@ -558,7 +558,7 @@
       '<div class="stat ' + (bal >= 0 ? 'amber' : 'green') + '"><div class="label">' + balLbl + '</div><div class="value">' + fmt(Math.abs(bal)) + '</div></div>' +
       '</div>' +
       '<div class="card"><div class="table-wrap"><table><thead><tr><th>' + t('date') + '</th><th>' + t('note') + '</th><th>' + t('amount') + '</th><th class="num">' + t('balance') + '</th><th>' + t('actions') + '</th></tr></thead><tbody>' +
-      (rows || '<tr><td colspan="5" class="empty"><div class="big">📒</div>' + t('no_data') + '</td></tr>') +
+      (rows || '<tr><td colspan="5" class="empty">' + t('no_data') + '</td></tr>') +
       '</tbody></table></div></div>';
   }
 
@@ -578,7 +578,7 @@
     root.innerHTML =
       '<div class="page-head"><h1>' + t('items') + '</h1><button class="btn" onclick="openItemForm()">' + t('new_item') + '</button></div>' +
       '<div class="card"><div class="table-wrap"><table><thead><tr><th>' + t('item') + '</th><th>' + t('hsn') + '</th><th>' + t('unit') + '</th><th>' + t('gst_rate') + '</th><th class="num">' + t('stock') + '</th><th class="num">' + t('low_at') + '</th><th class="num">' + t('sale_price') + '</th><th class="num">' + t('purchase_price') + '</th><th>' + t('actions') + '</th></tr></thead><tbody>' +
-      (rows || '<tr><td colspan="9" class="empty"><div class="big">🏷️</div>' + t('no_data') + '</td></tr>') +
+      (rows || '<tr><td colspan="9" class="empty">' + t('no_data') + '</td></tr>') +
       '</tbody></table></div></div>';
   }
 
@@ -645,7 +645,7 @@
     root.innerHTML =
       '<div class="page-head"><h1>' + t('payments') + '</h1><button class="btn" onclick="openPaymentForm()">' + t('new_payment') + '</button></div>' +
       '<div class="card"><div class="table-wrap"><table><thead><tr><th>' + t('date') + '</th><th>' + t('party') + '</th><th>' + t('amount') + '</th><th class="num">' + t('amount') + '</th><th>' + t('note') + '</th><th>' + t('actions') + '</th></tr></thead><tbody>' +
-      (rows || '<tr><td colspan="6" class="empty"><div class="big">💰</div>' + t('no_data') + '</td></tr>') +
+      (rows || '<tr><td colspan="6" class="empty">' + t('no_data') + '</td></tr>') +
       '</tbody></table></div></div>';
   }
 
@@ -691,7 +691,7 @@
   function tableHTML(heads, rowsHtml) {
     var h = '';
     for (var i = 0; i < heads.length; i++) h += '<th' + (heads[i].num ? ' class="num"' : '') + '>' + heads[i].label + '</th>';
-    return '<div class="table-wrap"><table><thead><tr>' + h + '</tr></thead><tbody>' + (rowsHtml || '<tr><td colspan="' + heads.length + '" class="empty"><div class="big">📊</div>' + t('no_data') + '</td></tr>') + '</tbody></table></div>';
+    return '<div class="table-wrap"><table><thead><tr>' + h + '</tr></thead><tbody>' + (rowsHtml || '<tr><td colspan="' + heads.length + '" class="empty">' + t('no_data') + '</td></tr>') + '</tbody></table></div>';
   }
 
   async function renderReports(root) {
